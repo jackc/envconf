@@ -1,3 +1,6 @@
+[![Go Reference](https://pkg.go.dev/badge/github.com/jackc/envconf.svg)](https://pkg.go.dev/github.com/jackc/envconf)
+![Build Status](https://github.com/jackc/envconf/actions/workflows/ci.yml/badge.svg)
+
 # Envconf
 
 Envconf is a simple, zero dependency library for managing configuration from the environment. It adds default values,
