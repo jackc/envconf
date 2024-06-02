@@ -1,9 +1,7 @@
 package envconf_test
 
 import (
-	"cmp"
 	"fmt"
-	"slices"
 	"testing"
 
 	"github.com/jackc/envconf"
@@ -32,8 +30,6 @@ func TestConfigItems(t *testing.T) {
 	}
 
 	expectedItems := []envconf.Item{barItem, fooItem}
-
-	slices.SortFunc(items, func(a, b envconf.Item) int { return cmp.Compare(a.Name, b.Name) })
 
 	for i := range items {
 		if items[i] != expectedItems[i] {
@@ -163,9 +159,7 @@ func Example() {
 
 	// You can use a config to create help output.
 	fmt.Println("Configuration items:")
-	items := config.Items()
-	slices.SortFunc(items, func(a, b envconf.Item) int { return cmp.Compare(a.Name, b.Name) })
-	for _, item := range items {
+	for _, item := range config.Items() {
 		fmt.Printf("%s: %s (default: %s)\n", item.Name, item.Description, item.Default)
 	}
 

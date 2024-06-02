@@ -1,6 +1,10 @@
 package envconf
 
-import "os"
+import (
+	"cmp"
+	"os"
+	"slices"
+)
 
 type Item struct {
 	Name        string
@@ -29,12 +33,14 @@ func (c *Config) Register(item Item) {
 	c.items[item.Name] = item
 }
 
-// Items returns all registered configuration items.
+// Items returns all registered configuration items sorted by name alphabetically.
 func (c *Config) Items() []Item {
 	items := make([]Item, 0, len(c.items))
 	for _, item := range c.items {
 		items = append(items, item)
 	}
+
+	slices.SortFunc(items, func(a, b Item) int { return cmp.Compare(a.Name, b.Name) })
 
 	return items
 }
