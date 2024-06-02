@@ -1,5 +1,5 @@
 [![Go Reference](https://pkg.go.dev/badge/github.com/jackc/envconf.svg)](https://pkg.go.dev/github.com/jackc/envconf)
-![Build Status](https://github.com/jackc/envconf/actions/workflows/ci.yml/badge.svg)
+[![Build Status](https://github.com/jackc/envconf/actions/workflows/ci.yml/badge.svg)](https://github.com/jackc/envconf/actions/workflows/ci.yml)
 
 # Envconf
 
